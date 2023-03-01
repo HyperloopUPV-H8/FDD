@@ -1,0 +1,5 @@
+PWD c:\Users\giner\OneDrive\Documentos\Universidad\Hyperloop\H8\FDD\SECTION 24
+INPUT C:\Users\giner\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT c:\Users\giner\OneDrive\Documentos\Universidad\Hyperloop\H8\FDD\SECTION 24\prueba.tex
+OUTPUT prueba.log
+INPUT C:\Users\giner\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm

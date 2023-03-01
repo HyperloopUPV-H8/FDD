@@ -1,0 +1,131 @@
+%---------------------- Colors ----------------------- %
+
+\definecolor{Naranjastring}{HTML}{FF5733}
+\definecolor{k3}{HTML}{27A48A}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{HTML}{F3F8FF}
+
+%---------------------- VDHL ----------------------- %
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{Azul_H8},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2,
+  inputpath = codigo,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  breaklines = true
+  %firstnumber=(auto|last|<number>) para comenzar el conteo de lineas de listing con otro numero. Auto empieza por 1, last, continua la cuenta del listing anterior, number es un numero cualquiera.
+}
+
+%---------------------- C ----------------------- %
+
+\lstdefinestyle{myCstyle}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{coloretsid},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{red},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2,
+  inputpath = codigo,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  breaklines = true,
+  keywordstyle=[2]\color{codepurple},
+  keywordstyle=[3]\color{k3},
+  keywords=[2]{DDRB, DDRC, DDRD, DDB0, DDB1, DDB2, DDB3, DDB4, DDB5, DDB6, DDB7, DDC0, DDC1, DDC2, DDC3, DDC4, DDC5, DDC6, DDC7, DDD0, DDD1, DDD2, DDD3, DDD4, DDD5, DDD6, DDD7, PORTB, PORTC, PORTD, PORTB0, PORTB1, PORTB2, PORTB3, PORTB4, PORTB5, PORTB6, PORTB7,  PORTC0, PORTC1, PORTC2, PORTC3, PORTC4, PORTC5, PORTC6, PORTC7,  PORTD0, PORTD1, PORTD2, PORTD3, PORTD4, PORTD5, PORTD6, PORTD7, PINB, PINC, PIND, PINB0, PINB1, PINB2, PINB3, PINB4, PINB5, PINB6, PINB7, PINC0, PINC1, PINC2, PINC3, PINC4, PINC5, PINC6, PINC7, PIND0, PIND1, PIND2, PIND3, PIND4, PIND5, PIND6, PIND7, ADMUX, REFS0, MUX0, MUX1, MUX2, MUX3, ADCSRA, ADATE, ADPS2, ADPS1, ADPS0, ADEN, ADIE, ADSC, ADC_vect, ADCW, TCCROA, WGM01, OCR0A, TIMSK0, OCIE0A, TCCR0B, CS02, CS01, CS00, TIMER0_COMPA_vect},
+  keywords=[3]{main},
+  morekeywords = {_delay_ms, sei, ISR, uint8_t, uint16_t}
+  %firstnumber=(auto|last|<number>) para comenzar el conteo de lineas de listing con otro numero. Auto empieza por 1, last, continua la cuenta del listing anterior, number es un numero cualquiera.
+}
+
+%---------------------- MATLAB ----------------------- %
+
+%Code listing style named "mystyle"
+\lstdefinestyle{myMstyle}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{coloretsid},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\normalsize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2,
+  inputpath = codigo,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  breaklines = true
+  keywordstyle=[2]\color{black},
+  keywords=[2]{path}
+  %firstnumber=(auto|last|<number>) para comenzar el conteo de lineas de listing con otro numero. Auto empieza por 1, last, continua la cuenta del listing anterior, number es un numero cualquiera.
+}
+
+%---------------------- SystemVerilog ----------------------- %
+
+%Code listing style named "mystyle"
+\lstdefinestyle{svStyle}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{coloretsid},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2,
+  inputpath = codigo,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  breaklines = true,
+  %keywordstyle=[2]\color{coloretsid},
+  keywordstyle=[3]\color{codepurple},
+  %keywords=[2]{always_comb, always_ff, always}
+  keywords=[3]{logic},
+  morekeywords = {always_comb, always_ff, always}
+  %firstnumber=(auto|last|<number>) para comenzar el conteo de lineas de listing con otro numero. Auto empieza por 1, last, continua la cuenta del listing anterior, number es un numero cualquiera.
+}
+
+%"mystyle" code listing set
+\lstset{language = vhdl, style=mystyle}
+\lstset{language = C, style=myCstyle}
+\lstset{language = matlab, style=myMstyle}
+\lstset{language = verilog, style=svStyle}
+
+\renewcommand{\lstlistingname}{Source code}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{List of \lstlistingname s}% List of Listings -> List of Algorithms
