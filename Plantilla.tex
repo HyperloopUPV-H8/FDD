@@ -1,3 +1,48 @@
+\documentclass[12pt, a4paper, oneside]{book}
+\usepackage[document]{ragged2e}
+\usepackage[english]{babel}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage{inputenc}
+\usepackage{comment}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{lscape}
+\usepackage{pgf, tikz}
+\usepackage{verbatimbox}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{color}
+\usepackage[RPvoltages]{circuitikz}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{fancybox}
+\usepackage{tcolorbox}
+\usepackage{diagbox} 
+\usepackage{subfig}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{listings} %incluir codigo
+\usepackage{minted}
+\usepackage{karnaugh-map}
+\usepackage{textgreek}
+\usepackage{chngcntr}
+\usepackage{titletoc}
+\usepackage{minitoc}
+\usepackage{acronym}
+\usepackage{pgfgantt}
+\usepackage{lipsum}
+\usepackage{pgfgantt}                           %Diagramas de Grant
+\usepackage[lining]{ebgaramond}                 %Tipografia Garamond
+
+\begin{comment}
 \documentclass[12pt,openany]{book}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}                     %idoma
@@ -20,7 +65,11 @@
 \usepackage{parskip}                            %espaciado entre parrafos
 \usepackage{fancyhdr}                           %encabezado y pie de pagina
 \usepackage{vmargin}
-%\usepackage{comment}                           %para comentar varias lineas
+\usepackage{comment}                            %para comentar varias lineas  
+\end{comment}
+
+\clubpenalty=10000 %% Avoid orphan lines
+\widowpenalty=10000 %% Avoid widow lines
 
 \input{Extra_config/Code_config.tex}
 \input{Extra_config/Part_config.tex}
@@ -54,7 +103,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%% CREAR FUNCIONES %%%%%%%%%%%55%%%%%%%%%%%%%%%%%
 \newcommand{\Nombre}{\textbf{\textcolor{Naranja_H8}{Kénos}}}                     %NOMBRE Vehiculo
 
-\newcommand{\Nombre}{\textbf{\textcolor{Naranja_H8}{Atlas}}}                     %NOMBRE Tubo
+\newcommand{\Tubo}{\textbf{\textcolor{Naranja_H8}{Atlas}}}                       %NOMBRE Tubo
 
 \newcommand{\sangria}{\hspace{0.5cm}}                                            %Sangria
 
@@ -62,7 +111,8 @@
 \newcommand\textbfo[1]{\textcolor{NaranjaH8}{\textbf{#1}}}
 
 \newcommand{\negrita}[1]{{\textcolor{Naranja_H8}{\textbf{#1}}}}                  %NEGRITA
-\renewcommand{\labelitemii}{\negrita{$\circ$}}
+
+\renewcommand{\labelitemii}{\negrita{$\circ$}}                                   %Nombre de los item
 \renewcommand{\labelitemiii}{-}
 
 %%%%%%%%%%%%%%%% NUMERACION DE ELEMENTOS %%%%%%%%%%%%%%%%%%%
@@ -87,16 +137,55 @@
 %Estilo de página
 \pagestyle{fancy}
 
+% NOTAS A PIE DE PÁGINA
+\counterwithout{footnote}{chapter}
+
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\chaptername\ \thechapter.\ #1}}{}}
+
 %Encabezado de Pagina
-\rhead{\includegraphics[width=0.8cm]{Figures/Logo Hyperloop UPV.png}}
-\lhead{}
+\rhead{\includegraphics[width=0.8cm]{FIGURES/Logo Hyperloop UPV.png}}
+\lhead{hola como estamos}
 \renewcommand{\headrulewidth}{0.3pt}
-\renewcommand{\headrule}{\hbox to\headwidth{\color{Azul_H8}\leaders\hrule height \headrulewidth\hfill}}\setlength{\headheight}{20pt}%
+\renewcommand{\headrule}{\hbox to\headwidth{\color{Azul_H8}\leaders\hrule height \headrulewidth\hfill}}\setlength{\headheight}{20pt}% 
+
+\begin{comment}
+  %Encabezado de Pagina
+\rhead{}
+\lhead{}
+\renewcommand{\headrulewidth}{0.1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{%
+		\color{Azul_H8}\leaders\hrule height \headrulewidth\hfill}}
+\setlength{\headheight}{25pt}%
+  
 
 
+%Pie de página
+\rfoot{}
+\cfoot{}
+\lfoot{\begin{picture}(0,0) \put(0,0){\includegraphics[width=40mm]{UPV/UPVlogoGris.png}} \end{picture}
+	\begin{picture}(0,0) \put(130,0){\includegraphics[width=40mm]{UPV/ETSID_BLUE.png}} \end{picture}}
 
+ \fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0.1pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+\end{comment}
 
+%background
+%\backgroundsetup{
+%    firstpage = false,
+%    placement = top,
+%    contents={\includegraphics[width=\paperwidth,height=\paperheight]{images/Doc6.pdf}},
+%    angle = 0,
+%    scale = 1,
+%    position = {10.5,0} ,
+%    opacity = 1
+%    }
 
+\setlength{\headheight}{26pt}
+\addtolength{\topmargin}{-1pt}
 
 
 %Datos del documento
@@ -105,12 +194,44 @@
 \date{March 2023}
 
 \begin{document}
-    \input{Extra_config/PORTADA.TEX}
-    \input{SECTION 24/prueba.tex}
+    %\input{Extra_config/PORTADA.TEX}
+    %\input{SECTION 24/prueba.tex}
     %\begin{titlepage}
     %    \maketitle
     %\end{titlepage}
 
-    parrafo de prueba hdhdhdhdhggdhdhdhhdh
+    \justify
+        \input{Extra_config/PORTADA}
+	\clearpage
+	\pagenumbering{Roman}
+	\rfoot{\thepage}
+	\initPartPage
+	\addcontentsline{toc}{chapter}{Contents}
+    \tableofcontents
+    \newpage
+    \addcontentsline{toc}{chapter}{List of Figures}
+	\listoffigures
+    \newpage
+    \addcontentsline{toc}{chapter}{List of Tables}
+	\listoftables
+    \newpage
+    \addcontentsline{toc}{chapter}{Acronyms \& Initials}
+    \pagestyle{fancy}
+    %\input{extra tex files/acro_list}
+    \newpage
+    \pagestyle{fancy}
+  
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
+    
+    \clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{SECTION 24/prueba}
+\thec
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5555
 \end{document}
+
 
