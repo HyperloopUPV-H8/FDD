@@ -1,64 +1,43 @@
-\documentclass[a4paper, oneside]{book}
-\usepackage[document]{ragged2e}
-\usepackage[english]{babel}
-\usepackage{natbib}
-\usepackage{url}
-\usepackage{inputenc}
-\usepackage{comment}
-\usepackage{amsmath, amsthm, amssymb}
-\usepackage{graphicx}
-\usepackage{parskip}
-\usepackage{fancyhdr}
-\usepackage{vmargin}
-\usepackage{booktabs}
-\usepackage{caption}
-\usepackage{lscape}
-\usepackage{pgf, tikz}
-\usepackage{verbatimbox}
-\usepackage{subfig}
-\usepackage{wrapfig}
-\usepackage{color}
-\usepackage[RPvoltages]{circuitikz}
-\usepackage{multicol}
-\usepackage{float}
-\usepackage{array}
-\usepackage{colortbl}
-\usepackage{fancybox}
-\usepackage{tcolorbox}
-\usepackage{diagbox} 
-\usepackage{subfig}
-\usepackage[hidelinks]{hyperref}
-\usepackage{xcolor}
-\usepackage{listings}    %incluir codigo
-\usepackage{minted}
-%\usepackage{karnaugh-map}
-%\usepackage{textgreek}
-\usepackage{chngcntr}
+\documentclass[12pt,openany]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}                     %idoma
+\usepackage{amsmath}                            %entorno para las formulas
+\usepackage{amsfonts}                           %entorno para las formulas
+\usepackage{amssymb}                            %entorno para las formulas
+\usepackage{graphicx}                           %imagenes
+\usepackage[hidelinks]{hyperref}                %link de referencias cruzadas
+\usepackage{color}                              %Creacion de colores
+\usepackage{listings}                           %incluir codigo
+\usepackage{chngcntr}                           %counterwithin y counterwithout
 \usepackage{titletoc}
 \usepackage{minitoc}
 \usepackage{acronym}
-\usepackage{pgfgantt}     %Diagramas de Grant
-\usepackage[lining]{ebgaramond}     %Tipografia Garamond
-\usepackage{lipsum}
+\usepackage{pgfgantt}                           %Diagramas de Grant
+\usepackage[lining]{ebgaramond}                 %Tipografia Garamond
+\usepackage{lipsum}                             %random
+\usepackage{background}
+\usepackage{natbib}                             %Bibliografía
+\usepackage{parskip}                            %espaciado entre parrafos
+\usepackage{fancyhdr}                           %encabezado y pie de pagina
+\usepackage{vmargin}
+%\usepackage{comment}                           %para comentar varias lineas
 
 \input{Extra_config/Code_config.tex}
 \input{Extra_config/Part_config.tex}
-%\input{Extra_config/Grant_config.tex}
 
 %Ruta carpeta imaganes
 \graphicspath{{FIGURES/}}
 
-\usetikzlibrary{arrows, automata}     %Diagramas realizados directamente en codigo LaTeX
-
 %Margenes
-\setmargins{2.54cm}  % margen izquierdo
-{1.5cm}             % margen superior
-{15.92cm}            % anchura del texto
-{23cm}           % altura del texto
-{15pt}              % altura de los encabezados
-{1cm}               % espacio entre el texto y los encabezados
-{0pt}               % altura del pie de página
-{2cm}               % espacio entre el texto y el pie de página
+\setpapersize{A4}
+\setmargins{2.54cm}                             % margen izquierdo
+{1.5cm}                                         % margen superior
+{15.92cm}                                       % anchura del texto
+{23cm}                                          % altura del texto
+{15pt}                                          % altura de los encabezados
+{1cm}                                           % espacio entre el texto y los encabezados
+{0pt}                                           % altura del pie de página
+{2cm}                                           % espacio entre el texto y el pie de página
 
 %Definir Colores
 \definecolor{Naranja_H8}{RGB}{238,118,35}
@@ -71,16 +50,13 @@
 \extrarowheight = -0.25ex
 \renewcommand{\arraystretch}{1.5}
 
-%Datos del documento
-\title{Final Demonstration Document}
-\date{March 2020}
 
-%Crear funcion sangria
-\newcommand{\sangria}{\hspace{0.5cm}}
+%%%%%%%%%%%%%%%%%%%%%%%%% CREAR FUNCIONES %%%%%%%%%%%55%%%%%%%%%%%%%%%%%
+\newcommand{\Nombre}{\textbf{\textcolor{Naranja_H8}{Kénos}}}                     %NOMBRE Vehiculo
 
-%Crear funciones
-\newcommand{\Nombre}{\textbf{\textcolor{Naranja_H8}{Kénos}}}                     %NOMBRE
+\newcommand{\Nombre}{\textbf{\textcolor{Naranja_H8}{Atlas}}}                     %NOMBRE Tubo
 
+\newcommand{\sangria}{\hspace{0.5cm}}                                            %Sangria
 
 \renewcommand{\labelitemi}{$\textcolor{Naranja_H8}{\bullet}$}                    %BULLET
 \newcommand\textbfo[1]{\textcolor{NaranjaH8}{\textbf{#1}}}
@@ -89,8 +65,7 @@
 \renewcommand{\labelitemii}{\negrita{$\circ$}}
 \renewcommand{\labelitemiii}{-}
 
-
-%%%%%%%%%%% NUMERACION DE ELEMENTOS %%%%%%%%%
+%%%%%%%%%%%%%%%% NUMERACION DE ELEMENTOS %%%%%%%%%%%%%%%%%%%
 %Numeracion figuras
 \renewcommand{\thefigure}{\arabic{part}.\arabic{section}.\arabic{figure}}
 \counterwithin*{figure}{section}
@@ -108,6 +83,7 @@
 %Numeracion de subsubsecciones 
 \setcounter{secnumdepth}{3}
 
+
 %Estilo de página
 \pagestyle{fancy}
 
@@ -118,145 +94,23 @@
 \renewcommand{\headrule}{\hbox to\headwidth{\color{Azul_H8}\leaders\hrule height \headrulewidth\hfill}}\setlength{\headheight}{20pt}%
 
 
- \fancypagestyle{plain}{%
-    %\fancyhf{}%
-    \fancyfoot[C]{\thepage}
-  %\fancyfoot[L]{\begin{picture}(0,0) \put(0,0){\includegraphics[width=40mm]{UPV/UPVlogoGris.png}} \end{picture}
-%	\begin{picture}(0,0) \put(130,0){\includegraphics[width=40mm]{UPV/ETSID_BLUE.png}} \end{picture}}%
-%  \renewcommand{\headrulewidth}{0.1pt}%
-%  \renewcommand{\footrulewidth}{0pt}%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\begin{document}
-%    \justify
-%	\input{Extra_config/PORTADA.TEX}
-%	\input{extra tex files/intentonallyblanck}
-	
-%	\pagenumbering{Roman}
-%	\rfoot{\thepage}
-%	\initPartPage
-%	\addcontentsline{toc}{chapter}{Contents}
-%    \tableofcontents
-%    \newpage
-%    \addcontentsline{toc}{chapter}{List of Figures}
-%	\listoffigures
- %   \newpage
-%    \addcontentsline{toc}{chapter}{List of Tables}
-%	\listoftables
-%    \newpage
-%    \addcontentsline{toc}{chapter}{List of Source codes}
-%	\lstlistoflistings
-%    \addcontentsline{toc}{chapter}{Acronyms \& Initials}
-%    \pagestyle{fancy}
-%   \input{extra tex files/acro_list}
-%    \newpage
-%    \pagestyle{fancy}
-%    \pagenumbering{arabic}
-%    \setcounter{page}{1}
-    
-%    \input{extra tex files/intentonallyblanck}
-%HDHDJFJFJ
-%\textbf{ESTO ES UNA PRUEBA} hola como estamos \Nombre\\
-
-%    \begin{tikzpicture}
-%        \centering
-%        \draw (0,0) circle (1cm);    
-%        \draw (-1,0) -- (0,1) -- (1,0) -- (0,-1) -- cycle;    
-%        \end{tikzpicture}\\
-
-%        \begin{center}
-%            \setlength\extrarowheight{5pt}
-%            %\renewcommand{\arraystretch}{1.2}
-%            \begin{tabular*}{3.4in}{@{\extracolsep{\fill} }  | c | c | c | c | c | c | c | }
-%                \hline
-%                \small\textit{g(t+0)} & \small\textit{g(t+1)} & \small\textit{g(t+2)} & \small\textit{f(t+3)} & \small\textit{f(t+4)} & \small\textit{g(t+5)} & \small{...}  \\
-%                \hline
-%            \end{tabular*}
-%    \end{center}
-%\end{document}
-
-%PORTADA----------------------------------------------------------------------------
-\begin{document} 
-\pagestyle{empty}
-\mbox{}
-\backgroundsetup{
-	firstpage = false,
-	placement = top,
-	contents={\includegraphics[width=\paperwidth,height=\paperheight]{FIGURES/Portadas documentos_1.jpg}},
-	angle = 0,
-	scale = 1,
-	position = {10.5,0} ,
-	opacity = 1
-}
-\BgThispage
-\clearpage
-\mbox{}
-%\backgroundsetup{
-%	firstpage = false,
-%	placement = top,
-%	contents={\includegraphics[height = \paperwidth, width = \paperheight]{Portadas/renderchulo.jpeg}},
-%	angle = 90,
-%	scale = 1,
-%	position = {0,-14.85} ,
-%	opacity = 1
-%}
-%\BgThispage
-%\clearpage
-\addtocounter{page}{-1}
-
-%CAPITULITOS----------------------------------------------------------------
-%MINI TOC-------------------------------------------------------------------
-%\initPartPage
-%ÍNDICE---------------------------------------------------------------------
-\let\cleardoublepage\clearpage % para borrar hojas en blanco que se crean 
-\pagestyle{plain}
-\tableofcontents
-
-\newpage
-\listoffigures
-\newpage
-\listoftables
-
-\pagestyle{fancy}
-\input{Extra_config/Acro_list.tex}
-%--------------------------------------------------------------------------
-\newpage
-\pagenumbering{arabic}
-\addcontentsline{toc}{chapter}{LA MADRE QUE TE PARIO}
-%\mtcaddpart
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%EMPIEZA EL JUEGO%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\clearpage
-
-\input{SECTION 24/prueba.tex}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%ACABA EL JUEGO%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\clearpage
-\clearpage
-\pagestyle{empty}
-\mbox{}
-\backgroundsetup{
-	firstpage = false,
-	placement = top,
-	contents={\includegraphics[width=\paperwidth,height=\paperheight]{FIGURES/Contraportada.pdf}},
-	angle = 0,
-	scale = 1,
-	position = {10.5,0} ,
-	opacity = 1
-}
-\BgThispage
+%Datos del documento
+\title{Final Demostration Document}
+\author{Hyperloop UPV}
+\date{March 2023}
 
+\begin{document}
+    \input{Extra_config/PORTADA.TEX}
+    \input{SECTION 24/prueba.tex}
+    %\begin{titlepage}
+    %    \maketitle
+    %\end{titlepage}
+
+    parrafo de prueba hdhdhdhdhggdhdhdhhdh
 \end{document}
+
